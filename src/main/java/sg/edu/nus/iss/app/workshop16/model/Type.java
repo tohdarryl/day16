@@ -3,7 +3,6 @@ package sg.edu.nus.iss.app.workshop16.model;
 import java.io.Serializable;
 
 import jakarta.json.Json;
-import jakarta.json.JsonNumber;
 import jakarta.json.JsonObject;
 import jakarta.json.JsonObjectBuilder;
 
