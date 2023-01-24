@@ -58,7 +58,7 @@
 ```
 
 ## Redis Server
-```
+
 On Terminal: To start Redis Server 
 ```
 redis-server
