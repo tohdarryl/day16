@@ -27,8 +27,18 @@
         }
     }
 }
+```
+
+## Springboot Dependencies
+```
+1. Spring Web
+2. Spring Boot DevTools
+3. Thymeleaf
+4. Validation
+5. Spring Data Redis (Access+Driver)
 
 ```
+
 ## JSON Dependency Injector
 ```
 <dependency> 
@@ -45,4 +55,16 @@
             <artifactId>jedis</artifactId>
             <version>4.3.1</version>
 </dependency>
+```
+
+## Redis Server
+```
+On Terminal: To start Redis Server 
+```
+redis-server
+```
+
+On Separate Terminal
+```
+To check Redis Server 
 ```

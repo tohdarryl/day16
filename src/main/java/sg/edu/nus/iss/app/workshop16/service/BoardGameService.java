@@ -12,6 +12,7 @@ public class BoardGameService {
     @Autowired
     RedisTemplate<String, Object> redisTemplate;
     //Task 1
+    //Saves Mastermind object in redis-server
     public int saveGame(final Mastermind mds) {
         System.out.println("mds " + mds.toJSON().toString());
         redisTemplate.opsForValue().set(mds.getId(), mds.toJSON().toString());
@@ -21,25 +22,35 @@ public class BoardGameService {
         return 0;
     }
     //Task 2
+    //Retrieves Mastermind object in redis-server by ID
     public Mastermind findById(final String msid) throws IOException {
         String mdsStr = (String)redisTemplate.opsForValue().get(msid);
         Mastermind m = Mastermind.create(mdsStr);
         return m;
     }
     //Task 3
+    //Updates records in redis-server
     public int update(final Mastermind mds) {
         System.out.println("upsert ? " + mds.isUpSert());
-        if (mds.isUpSert()) {
-            //if key exists, UPDATE record
-            System.out.println("upsert is true");
-            redisTemplate.opsForValue().set(mds.getId(), mds.toJSON().toString());
-        } else {
-            //if key is absent, INSERT record
-            System.out.println("upsert is false");
-            redisTemplate.opsForValue().setIfAbsent(mds.getId(), mds.toJSON().toString());
-        }
+        System.out.println(mds.getId());
         String result = (String) redisTemplate.opsForValue()
                 .get(mds.getId());
+        if (mds.isUpSert()) {
+            System.out.println("upsert is true");
+            System.out.println(result);
+            //if redisTemplate has any key and value
+            if(result != null)
+                redisTemplate.opsForValue().set(mds.getId(), mds.toJSON().toString());
+            else
+            //Otherwise if key is absent in redisTemplate
+                redisTemplate.opsForValue().setIfAbsent(mds.getId(), mds.toJSON().toString());
+        } else {
+            System.out.println("upsert is false");
+            if(result != null)
+                redisTemplate.opsForValue().set(mds.getId(), mds.toJSON().toString());
+        }
+        result = (String) redisTemplate.opsForValue()
+            .get(mds.getId());
 
         if (null != result)
             return 1;
