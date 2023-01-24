@@ -65,6 +65,7 @@ redis-server
 ```
 
 On Separate Terminal
-```
 To check Redis Server 
+```
+redis-cli
 ```
