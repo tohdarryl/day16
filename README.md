@@ -64,7 +64,7 @@ On Terminal: To start Redis Server
 redis-server
 ```
 
-On Separate Terminal
+On Separate Terminal <br>
 To check Redis Server 
 ```
 redis-cli
