@@ -29,7 +29,7 @@
 }
 ```
 ## Setting up application.properties
-export REDISHOST=localhost ${REDISHOST}
+export REDISHOST=localhost ${REDISHOST} <br>
 export REDISPORT=6379 ${REDISPORT}
 
 ```
