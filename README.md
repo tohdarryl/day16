@@ -40,7 +40,7 @@ spring.redis.password=
 spring.redis.client.type=jedis
 ```
 
-## Springboot Dependencies (spring initialzr)
+## Springboot Dependencies (spring initializr)
 ```
 1. Spring Web
 2. Spring Boot DevTools
