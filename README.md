@@ -28,8 +28,19 @@
     }
 }
 ```
+## Setting up application.properties
+export REDISHOST=localhost ${REDISHOST}
+export REDISPORT=6379 ${REDISPORT}
 
-## Springboot Dependencies
+```
+spring.redis.host=localhost
+spring.redis.port=6379
+spring.redis.username=
+spring.redis.password=
+spring.redis.client.type=jedis
+```
+
+## Springboot Dependencies (spring initialzr)
 ```
 1. Spring Web
 2. Spring Boot DevTools
